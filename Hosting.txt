@@ -1,0 +1,44 @@
+** Hosting :- Hosting is place where we can host/store our website.
+** Domain Name :- Domain is a name of the hosting. Like My home is located in the simra place here simra is a hosting if we want to find my home then we should know our home name or number or we can say we have to know address of our home, So this address is called domain name. So after host our website where we have hosted, that will be defined by name or address, that name or address is called domain name.
+
+For access our website from the internet we are to buy a space to store it, like 20 gb or 100 gb server machine, after hosting, for accessing it via internet we are to map the public IP of the server with domain name. 
+  
+** There are many type of hosting available in this time --
+	1. Dedicated Hosting/Server - A dedicated server like a personal rested house.
+
+A dedicated server is a single computer, which is hosted by a company and allows only one company to rent and access. It is dedicated to only one client and cannot be shared with any other clients. Some of the networks require one computer to be isolated for managing connections between all other devices. A dedicated server can be a part of a computer that has the capability to manage printer resources.
+
+Remember that all servers cannot be a dedicated server. In some networks, it can be possible for a computer to work as a server and also able to perform other functionalities. The hosting company offers an add-on service for the client, like administration services to freeing the client from having to worry about the server. The hosting company also utilizes hard security plans for providing safeguard their clients' data.
+
+Dedicated Hosting
+With dedicated hosting, your web site is hosted on a dedicated server.
+
+Dedicated hosting is the most expensive option. This option is best suited for large web sites with high traffic, and web sites that use special software.
+
+You should expect dedicated hosting to be very powerful and secure, with almost unlimited software solutions.
+
+Good:	Bad:
+Good for large business.	Expensive.
+Good for high traffic.	Requires higher skills.
+Multiple domain names.	 
+Powerful email solutions.	 
+Powerful database support.	 
+Strong (unlimited) software support.
+
+
+Why Do You Need a Dedicated Server?
+A dedicated server is known as one of the highest-performance hosting options. We like to think of a dedicated server like your own house. No one will bother/disturb you and you can do whatever you’d like. Whereas a shared server is much like living in PG where you have to share everything.
+
+Dedicated servers allow for:
+
+24/7 uptime
+Faster connection speeds
+Less risk of virus attacks
+Maintenance on the fly
+Dedicated servers aren’t specifically designed for one purpose. They can be used to host websites, game servers, or anything that requires a place for multiple computers to store and read files.
+
+	2. VPS(Virtual Private Server) Hosting - Its like a rented flat. In a apartment there is many falt , so it's just like that. In a server there are many virtual machine, In every virtual machine we can host different different company's website.
+
+	3. Shared Hosting:- It is like a PG. Where in a 3 sharing room there is multiple pleople stay in thir own bed.When In a VPC has multiple hosted website, that is called Shared Hosted File.  
+	4. Cloud Hosting - It is different platform, where you can make your own platform. where we can increase our resources as our need.
+

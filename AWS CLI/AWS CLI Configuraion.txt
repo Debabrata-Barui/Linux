@@ -1,0 +1,37 @@
+** How to Configure S3 AWS CLI with Windows
+
+1. Download AWS CLI -https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+2. Install AWS CLI
+3. Go to AWS Management Console -> Click on your user id -> Click on Security Credential -> Access keys (access key ID and secret access key)-> Create New Access Key -> Download -> Copy the Access Key IDv & AWS Secret Key
+
+4. Open CMD & type the bellow command
+	C:\Users\DEBU\Desktop\testing>aws configure
+	AWS Access Key ID [****************EK62]: AKIAZINA2EDUOAU7EK62
+	AWS Secret Access Key [****************0Gie]: 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
+	Default region name [None]: us-east-2
+	Default output format [None]:
+
+5. Now we will create bucket by command line
+	# aws s3 mb s3://bucketdebu723145 	=> To create bucket
+	# aws s3 ls   => Show the buckets list
+	# aws s3 ls s3://bucketdebu723145 ==> Show the list of objects	
+	# aws s3 rb se://bucketdebu723145	=> To remove the bucket
+
+6. Now you synchronize this s3 bucket with Desktop Folder
+	# cd Desktop
+	# mkdir testing
+	# cd testing
+	# aws s3 mb s3://bucketdebu723145 => To create bucket
+	# aws s3 ls   => Show the buckets list
+	# aws s3 sync . s3://bucketdebu723145  ==> To All fiels and folder Upload
+	# aws s3 ls s3://bucketdebu723145 ==> Show the list of objects
+	# aws s3 sync . s3://bucketdebu723145/dir1 ==> To upload all files into a particular dir1 folder
+	# aws s3 ls s3://bucketdebu723145/dir1 ==> Show the list files of folder dir1
+	# aws s3 sync s3://bucketdebu723145 .  ==> To Download
+	# aws s3 rm s3://bucketdebu723145/dir1/Untitled.png ==> We can remove particular one file(Untitled.png)
+	# aws s3 rm s3://bucketdebu723145 --recursive ==> To clean/empty the bucket
+	# aws s3 rm s3://bucketdebu723145/ --recursive --exclude "*.jpg"  ==> here .jpg file will not be delete, otherwise all file will be delete
+ 	# aws s3 rm s3://bucketdebu723145/ --recursive --exclude "another/*" ==> here another folder will not be delete, otherwise all file will be delete
+ 	# aws s3 rb s3://bucketdebu723145	=> To remove the bucket 
+
+	

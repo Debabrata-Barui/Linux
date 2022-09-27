@@ -1,0 +1,524 @@
+AWA(Amazon Cloud Serviuce) -- 
+AWS UserId - debabratabarui12345@gmail.com
+AWS Password -- Debrarta@2022
+---------------------------
+On Premises -- 
+	Customer Manager--
+		Networking->Storage->Servers->Vertualization->O/S->Middleware->Runtime->Data->Applications
+
+** Port Numbers :-- (0 to 65535)
+
+TELNET - 23
+HTTP - 80
+HTTPS - 443
+SSH - 22 - Secure Shell
+RDP- 3389 - Remote Desktop Protocol
+SSL - 443-  Secure Sockets Layer - 
+DNS(UDP) - 53-Domain Name System(User Datagram Protocol)
+DNS(TCP) - 53-Domain Name System(Transmission Control Protocol)
+FTP - 21 ==> Example of FTP tools -- FileZilla, CW PowerShell etc... 
+SMTP - 25
+POP3(Post Office Protocol)- 110
+IMAP(Internet Messaging Access Protocol) - 143
+Secure SMTP(SSMTP) - 
+	Gmail SMTP port (TLS-Transport Layer Security): 587
+	Gmail SMTP port (SSL- Secure Socket Layer): 465	
+Secure IMAP(IMAP4-SSL) - 585
+IMAP4 Over SSL(IMAPS) -- 993
+Secure POP3S(SSL-POP) -- 995
+MYSQL - 3306
+ICMP(Internet Control Message Protocol) :- It is used to ping command
+
+
+
+Email Servers can be two types--
+	1. Incoming Mail servers -- POP3(Post Office Protocol Version-3),IMAP(Internet Message Access Protocol), HTTP(Hyper Text Transfer Protocol)
+	2. Outgoing Mail Service -- SMTP(Simple Mail Transfer Protocol)
+
+
+Cloud Service Models =>
+---------------------
+1. IaaS(Infrastructure As a Service)-- 
+		
+	(Service Provider Manage)
+	Networking->Storage->Servers->Vertualization->
+	
+	(Customer Manage)
+	O/S->Middleware->Runtime->Data->Applications
+
+2. PaaS(Platform As a Service)	
+	
+	(Service Provider Manage)
+	Networking->Storage->Servers->Vertualization->O/S->Middleware->Runtime->
+	
+	(Customer Manage)
+	Data->Applications
+
+2. SaaS(Software As a Service)	
+	
+	(Service Provider Manage)
+	Networking->Storage->Servers->Vertualization->O/S->Middleware->Runtime->
+	
+	(Customer Manage)
+	Data->Applications
+
+	Ex- Facebook,twiter, Email, Online Game..
+
+	
+Cloud Deployment Models => [Private, Public, Community, Hybrid Cloud]
+--------------------------
+Public Cloud:- (Here all the systems and services to be accessible to the general public.) 
+The public cloud allows systems and services to be easily accessible to the general public. Public cloud may be less secure because of its openness.
+
+Private Cloud:- (Here all the systems and services to be accessible within the organization.)
+The private cloud allows systems and services to be accessible within an organization. It is more secured because of its private nature.
+
+Community Cloud:- 
+The community cloud allows systems and services to be accessible by a group of organizations.
+
+Hybrid Cloud:-
+The hybrid cloud is a mixture of public and private cloud, in which the critical activities are performed using private cloud while the non-critical activities are performed using public cloud.
+
+
+** Linux Basics--
+	1. User Management - How to create user setup user password
+	2. File Management - How to ceate file, copy, move and delete file
+	3. Linux File Permission - How to set file permission
+	4. Linux Package Managemet - How to install/ remove package
+	6. Linux File System -- How to create file system, mount, unmount FS
+
+*  AWS Global Infrastructure --
+---------------------------------
+1. Region -- Region means location of Data Center. There are 24 region is available. But we can create maximum 20 instance in one region. You have to select the nearest region because of reduce the latency.  
+2. Availability Zones -- There are many Data Centers are made in one Rezon for safe to data from climate dijaster and every data center are connected through high speed optical fiver cable. Minimum 2 Availability zone must be in one Rezion. There are total 74 availability zone. There are should have been minimum 2 and maximum 6 availality zone in one Region. 
+ 
+** Amazon EC2(Elasic Compute Cloud) -- EC2 is a Virtual Machine. It provides sclable computing capacity in the AWS cloud. 
+
+	- Root Volume of EC2 -- Where os is loaded. Its like a C drive.
+		It has two storage option- 1. EBS(Amazon Elastic Block Store) -- It is a store Hard Drive. We can store data here parmanety. But its very slow than Instance storage.
+				   	   2. Instance Store -- It is very fastest but after shout down server data will be erase.HANA Database is running here.
+	- Many Predefine Templates are available here-- OS Template like Linux Ubuntu, Redhat, Kali etc.
+							Specific Server Template like SQL Server, VPN ...	
+											
+	- We can create maximum 20 instances in one Region.
+	- Maximum 5 VPC can be created in one Region. 
+
+** How to Backup and Restore the server ?
+==> We can backup and restore the aws server by taking Snapshot of Volume and by through AMI. All the snapshop is stored in S3. 
+ 
+* Types of EC2 Instances --> It is Virtual Server in the cloud. 
+	
+	1. General Purpose -- Balanced Memory & CPU( For Normal Usage)
+		There are 3 Series Availabe -->
+			1. A-Series : (Medume, Large)
+			2. T-Series: (Free tier eligible)-t2.micro
+			3. M-Series : (Large)
+			
+			
+	2. Compute Optimize -- More CPU(8core, 16 core) than RAM
+	3. Memory Optimize -- More RAM
+	4. Storage Optimize -- Low Latency(for database)
+	5. Accelarated Computing/GPU/Gamming PC -- Graphics Optimize (It is used for Gamming)
+	6. High Memory -- High RAM, NIRO System
+	7. Previous Generation
+
+
+*Lunch and Instance Info -->
+	- Application and OS Images(Amazon Machine Image) - Amazon Linux, Ubuntu, Windows, Red Hat, Suse Linux, macOS, Debian
+	- Instance Type -- It is the Actual Varitual Machine
+	- Key pair- A key pair, consisting of a private key and a public key, is a set of security credentials that you use to prove your identity when connecting to an instance.
+		Key Pair Type --
+			1. RSA	   - RSA encrypted private ad public key pair
+			2. ED25519 - ED25519 encrypted private ad public key pair(Not supported for Windows instances)
+		Private Key File Format - 
+			1. .pem -- For use with OpenSSH
+			2. .ppk -- For use with PuTTY
+	- Network Setting
+	- Configure Storage
+	- Advanced details
+
+Intance Public IPv4  -- 18.212.29.115
+
+
+
+* Linux OS(1991) - Linux Kernel + GNU(Collection of Sofware). Linux Invented by Linus Torvalds.
+
+* GNU fullform - GNU's not Unix
+
+_______________________________________________________________________________________________________________
+
+** VPC(Virtual Private Cloud) ==>
+---------------------------------
+- VPC is a Isolated Cloud Resources.
+- A VPC is a Virtual Network or Data Center inside AWS for one client.
+- It is logically isolated from other Virtual Network in the AWS Cloud.
+- Here Router, Gateway, NIC all devices are logically exists just like phisical private network.
+- Maximum 5 VPC can be created in one Region.
+- Maximum 200 Subnet can be created in one VPC. So in 5 VPC we can create maximum 200*5= 1000 Subnets.
+- Also that we can create 200 routing table in one VPC.
+- We can get 5 Elestic IP in one AWS Account.
+- Once we created VPC - DHCP, NACL(Network Access Control List), Security Group will be autometically creatd.
+
+	AWS Could 
+	---------
+	   ||
+	   ||Inside
+	   ||
+	Region(Mumbai)	
+	-------------
+	   ||
+	   ||Inside 
+	   ||			
+	  VPC-10.0.0.0/16 <- Subnet IP/CIDR Value(Subnet ID)
+	-------- 												
+ 
+** In one region may be same VPC(10.0.0.0/16) create because It is logically isolated from other Virtual Network in the AWS Cloud. But if we want to piering between two different AWS accout VPC, when if there two VPC Subnet IP are same then It's not possible to piering, So It should be different Subnet ip between two NPC.
+
+* There are two types subnets--
+	1. Private Subnet -- Private subnet can't be connected in Internet GateWay. Web Server is always exist in Public Subnet and For data Security Database server is exit on Private Subnet.
+	2. Public Subnet -- Public subnet has to be connected in Internet GateWay. In Public Subnet EC2 Instance must have a own public IPV4 or an Elastic IP to connect with Internet . 
+
+*Note -- Public IP- It is a Dynamic IP Adress.
+	Elastic IP - It is Static Ip Address.  
+
+** Note :- When we create a VPC, we must specify an IPV4 CIDR Block and CIDR Block Size is between /16 to /28 netmask.
+	  - The first four & last IP Address of subnet cannot be assigned. 
+		Ex- 10.0.0.0 -- Network Address
+		    10.0.0.1 -- Reserved by AWS for VPC Router
+		    10.0.0.2 -- Reserved by AWS for the IP Address of DNS Server
+		    10.0.0.3 -- Reserved by for future use.
+		    10.0.0.255 -- Brodcast Address.		
+
+Components of VPC -->
+-------------------
+- Once the VPC is created, you can't change it's CIDR Bock Range.
+- If you need a different CIDR Size create new VPC.
+- The different subnet within a VPC can't overlap.
+
+
+**Implied/Logical Router -- Router is created inside the VPC.Router helps to connect the subnet with Internet Gateway. Inside the VPC all the subnet can communicate normally by router. But router is not exists in phically but we can consider it that router is there in logically. There can be 200 routing table in one VPC. In one routing table we can define maximum 50 route path. Each Subnet must be associated/declared with only one route table at a given time.
+If you do not specify a subnet to route table association, the subnet will be associated with the default VPC Route table.
+You can't delete main route tale, but you can also edit..
+However you can make a custome routable and after that you can conver it to the main route table and then you can delete the previous main route table. 
+
+
+** Internet Gateway -- It is one kind of virtual router. It is used to connect the VPC to the Internet.
+		     - It is always in bousary of the region.
+		     - Default VPC is already attached with an Internet Gateway
+		     - If you create a new custom VPC you must attach to the innternet getway in order to access the gateway.
+		     - Ensure that your subnet route table points to the internet gateway.
+		     - Internet Getway manage the Elastic IP of EC2 Instance in the BackEnd
+		     - It supportS IPV4 as well as IPV6  
+			
+
+** PAT -- Port Address Translation .
+** NAT -- It's full form is Network Address Translation. It used to convert the Private IP to Public IP and Public IP to Private IP.
+** NAT(Network Address Translation) Instance -- It already enabled with EC2 Instance. Here you can use Public IP(Dynamic IP) as well as Elasic IP(Static IP)
+
+** NAT Gateway - NAT Gateway is always exist inside the Public Subnet. But Private subnet Instances does access the internet through NAT Gateway, From Outside Internet we can't access Private Subnet through NAT. NAT is used only Outgoing not Incomming. Here we can only use Elastic IP. 
+Web Server is always exist in Public Subnet and For data Security Database server is exit on Private Subnet.
+
+Security Group:- Its a virtual firewall. It Provide the security to the EC2 Instance.Up to 5 Security Group per EC2 Inspance can be applied.
+		Can only have permit rule , cannot have deny rule in Security Group.
+		Stateful(Inboud+Outbound both has permission)
+
+NACL(Network Access Control List):- It is like a firewall. It is imported with the VPC Router. This security works after the routing table. It provides the security in the Subnet Label. 
+					Its Two types---	
+						1. Default NACL
+						2. Custome NACL
+
+
+VPC Peering--  
+---------------------------------------------------------
+** VPC Type --
+There are two types of VPC --
+1. Default VPC -- It Created in each AWS Region when an AWS Account is created.
+		- It has default CIDR Security Group, NACL, Route Table Setting.
+		- It has an Internal Gateway by default.
+
+2. Custom VPC -- It is VPC on AWS Account Owner creates
+		- AWS User creating the custom VPC can deside CIDR value.
+		- It has own default security group, Network ACL and Route table
+		- It doesn't have an Internet Gateway by default, One needs to be created. 
+
+** Step to create VPC --
+	1. Create vpc
+	2. Subnet
+	3. Internet Gateway
+	4. Route Table
+ 	 
+** What is VPN(Virtual Private Network) :-
+- To Connecting private system in our own premisess with the help of tunnel and communication should be encrypted format.  
+A virtual private network, or VPN, is an encrypted connection over the Internet from a device to a network. The encrypted connection helps ensure that sensitive data is safely transmitted. It prevents unauthorized people from eavesdropping on the traffic and allows the user to conduct work remotely.  VPN technology is widely used in corporate environments.
+
+
+
+** How to Configure VPN
+---------------------------
+=> Create VPC
+=> Create Two Subnet- 1st Public Subnet for VPN and 2nd Private Subnet for Windows 2012 Instance
+=> Create a Internet Gateway and Connect this internet gateway with Internet via Elastic IP
+=> Create a NAT Gateway to accessing for Private Instance 
+=> Create two Route Tables - 1st Public Subnet for VPN Server and 2nd Private Subnet for Windows 2012 Instance
+	- do subnet associations for both route tables
+	- connect the Internet Gateway to the VPN Route Table
+	- connect the NAT through with the Windows 2012 Instance Route table
+=> 	Go to EC2 -> Crete Lounch Instance -> Clik On Browse more AMIs -> AWS Marketplace AMIs = Search OpenVPN -> Click on Select button.
+=> 	Select Required VPC for VPN Server
+=> 	VPN Server Subnet should be Public and Auto-assign public IP should be Enabled
+
+=> Open VPN Server through Putty
+	Root Password : openvpnas
+	# sudo su
+	# passwd openvpn
+	Password: password
+
+=> Copy the VPN Client IP and Paste It in the browser and user the VPN username(openvpn) password(password) and Download the VPN Client and Install to our Local Laptop..
+
+	Client UI: https://13.234.66.107:943/ -- 
+
+
+=> Then create a Private Windows Server 2012 Instance
+=> 	Select Required VPC for Instance
+=> 	Win Instance Subnet should be Private and Auto-assign public IP should be Desabled
+.........
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+********** AWS Storage ********
+------------------------------ 
+** Type of AWS Storage --
+	1. Simple Storage Srvice (S3):- It is a Object Level Storage.That means we can store any type of file here. We can access it from anywhere.  
+	2. Elastic File System (EFS) :- It is for linux only. Its like a central storage. It stores which patch file that are used for software updation. We can update any software in different Availibi Zone and Different.  
+	3. Elastic Block Storage (EBS) :-It is block lavel Storage. It is default storage of EC2-Instance. Whenever we create EC2 Instance then It will automatically create.
+	4. S3 Glacier :- It is a part of the S3.  We can store large amount of data with chefest price in here.
+	5. Snowball : Its a Portable Storage. It is used for data migration. When a company want to tranfer its huge data to the AWS cloud then Amajon provide Snoball Storage Service.
+	It accelerates moving large amounts of data into and out of the AWS cloud using portable storage devices for transport.
+For example, if you have 500 TB data and you got a slow internet connection, i.e., 1mbps. Instead of sending the data over the internet, you can send it to Amazon through an external hard disk, and they would transfer your data directly onto and off of storage devices using Amazon's high-speed internal network and bypassing an internet.
+Lots of people started using it, and they were all sending different types of disks, connections which became difficult to manage. 
+
+
+
+*** Block Lavel Storage:- Here all the data is store in difeerent equal blocks and All the block information is loaded into the index table. 
+			Data is searhing by Index Table.. Example of Block Storage is EBS..
+
+
+** Object Level Store :- Here data is stored as it is. This storage name will be unique. So, we can access it from anywhere.Here to store data information It uses meta data.
+	Ex- AWS S3, Facebook, Dropbox....
+
+
+
+**** Details About S3 ==>
+- S3 is a storage for the internet It has simple webservices Inteface and Retriving of any amout of data, anytime from anywhere on the Internet. 
+- S3 is a Object based Storage
+- You can't install Operating system on S3
+- S3 has a distributed data-store architecture where object are redundently stored in multiple location(Min 3 Avialability Zone in same region)
+- S3 is a Distributed data store architecture. Where 3 different store copy are created in a Region. It migiht be in same Availability Zone or Difeerent AZ but It should be in a Same Region. 
+- Data is stored in Bucket. Bucket is nothing, it is a kind of folder. 
+- A bucket is a flat container of object. That's means we can't create Bucket within Bucket that means Nested Bucket.  
+- Max capacity of bucket is 5TB. 
+- You can create folder in your Bucket(Available through Console)
+- You can't create Nested Bucket. 
+- Bucket Ownership is not transfarable
+- S3 Bucket is region specific
+- You can have 100 buckets in a account(May expund on request) 
+
+
+** S3 Buckets Naming Ruls --->
+--------------------------
+- S3 Bucket name(Keys) are globally unique across all aws regions, although around AWS.
+- Bucket Names can't be change after once are created.
+- If a bucket is deleted, Its name become available again to you or other account. 
+- Bucket name must me atlast 3 and no more than 63 character long.
+- Bucket names are part of the URL used to accross a bucket.
+- Bucket name can contain lowercase, numbers, but uppercase , hyphen can not be used to create bucket.
+- Bucket name should be an ip address.
+- Each label must start and end with a lowercase latter or a number..
+- By default bucket and its object are private, only owner can access bucket..
+- We can host static website in S3 Storage.
+- We can do visioning any file here.If Once version controll is enabled then we can't disable versioning. But we can suspend the versioning.. 
+
+Bucket URL => https://StorageType-Region-AvailabilityZone.amazonaws.com/BucketName
+		
+	EX- https://S3-eu-west1-amazonaws.com/bcket1
+
+
+
+** Load Balancing :- Load Balancing distributes the web service to the servers. It autometically detect which server is active and which one is down and according to that it distribute the web trafic to the servers.
+Suppose Same type of webpage is hosted in 100 server in different availability zone or different region  and all the servers are connected to a load balancer and we can map the load balancer ip with the domain name.
+So from here we can devide the web trafic to the 100 server. If one server is damage, there is no effect to the web site. 
+Example of Load Balancer F5.
+There are 3 types of Load Balancer - 
+	1. Application Load Balancer
+	2. Networking Load Balancer
+	3. Classic Load Balancer
+
+
+** Auto Scalling --  Here server is autometically increase according to the web trafic. We can reserve the extra server however(যাহোক)  we want. 
+Suppose there are server are running and there is comming lots of traffic in a time, here autoscalling will do increase the server according the trafic which are reserved and it distribute the web trafic to the different server.
+
+
+** How many IPs available in AWS?
+=> There are 3 type of IPs available in the AWS.
+	1. Public IP - Dynamic IP
+	2. Private IP - We can't access the server through Private IP in publicly.
+	3. Elasic IP - It is one kind of Public Static IP. we can the access the server by this.
+
+
+** What is IAM?
+IAM stands for Identity Access Management.
+IAM allows you to manage users and their level of access to the aws console.
+It is used to set users, group, permissions and roles. It allows you to grant access to the different parts of the aws platform.
+AWS Identity and Access Management is a web service that enables Amazon Web Services (AWS) customers to manage users and user permissions in AWS.
+With IAM, Organizations can centrally manage users, security credentials such as access keys, and permissions that control which AWS resources users can access.
+
+** What is SAML?
+SAML stands for Security Assertion Markup language.
+Generally, users need to enter a username and password to login in any application.
+SAML is a technique of achieving Single Sign-On (SSO).
+Security Assertion Markup Language (SAML) is an Xml-based framework that allows the identity providers to provide the authorization credentials to the service provider.
+
+** What is EBS?
+EBS stands for Elastic Block Store.
+EC2 is a virtual server in a cloud while EBS is a virtual disk in a cloud.
+Amazon EBS allows you to create storage volumes and attach them to the EC2 instances.
+
+** Security Group
+A security group is a virtual firewall which is controlling the traffic to your EC2 instances.
+When you first launch an EC2 instance, you can associate it with one or more security groups.
+A Security group is the first defence against hackers.
+
+** AMI ==> 
+An AMI stands for Amazon Machine Images.
+-> AMI is like a Docker Image. We can create Snapshot(Image) of EC2 Instance. After create Image we can upload the image to the amazon market place. We can Install our own customise OS through this Image in EC2 Instance.
+An AMI is a virtual image used to create a virtual machine within an EC2 instance.
+You can also create multiple instances using single AMI when you need instances with the same configuration.
+You can also create multiple instances using different AMI when you need instances with a different configuration.
+It also provides a template for the root volume of an instance.
+
+** What is VPC
+VPC stands for Virtual Private Cloud.
+Amazon Virtual Private Cloud (Amazon VPC) provides a logically isolated area of the AWS cloud where you can launch AWS resources in a virtual network that you define.
+
+
+** What is VPC
+VPC stands for Virtual Private Cloud.
+- VPC is a one kind of virtual private network environment, It ia a logically isolated area of the AWS cloud, where we can run like EC2 instance.
+Amazon Virtual Private Cloud (Amazon VPC) provides a logically isolated area of the AWS cloud where you can launch AWS resources in a virtual network that you define.
+You have complete control over your virtual networking environment, including a selection of your IP address range, the creation of subnets, and configuration of route tables and network gateways.
+You can easily customize the network configuration for your Amazon Virtual Private Cloud. For example, you can create a public-facing subnet for web servers that can access to the internet and can also place your backend system such as databases or application servers to a private-facing subnet.
+You can provide multiple layers of security, including security groups and network access control lists, to help control access to Amazon EC2 instances in each subnet.
+
+- VPC stands for Virtual Private Cloud. It is Logically Isolated area of AWS Cloud. It is a one kind of virtual private network envorment, where we can define our required networking services and devices like Internet Gateway, NAT Gateway/Insrance and further we can create our own private and pubpic sebnet ...
+
+- There are there many vpc component like - Internet Gateway, Route Table, NAT Gateway, Subnet ect...
+
+** What is Internet Gateway?
+=> An internet gateway is a horizontally scaled, redundant, and highly available VPC component that allows communication between your VPC and the internet. It supports IPv4 and IPv6 traffic.
+
+** NAT Gateways
+NAT stands for Network Address Translation.
+If you want your EC2 instance in a private subnet can access the internet, this can be achieved only when it can communicate to the internet. However, we do not want to make a subnet public as we want to maintain the degree of control. To overcome the problem, we need to create either NAT Gateways or NAT Instances.
+- Suppose that EC2 Instance have private subnet and we all know we can't get the internet connection via private subnet, so if we want to give the Internet connection to internet access then we have to connect this private subnet with the NAT Gateway or NAT Instance and NAT Instance will have Elastic IP to connect in the Internet.
+
+In real time, NAT Gateways are highly used than NAT instances as NAT instances are an individual EC2 instances, and NAT Gateways are highly available across multiple availability zones, and they are not on a single EC2 instance.
+
+** Compare NAT gateways and NAT instances --> 
+==> Availability -- 
+	-- Highly available. NAT gateways in each Availability Zone are implemented with redundancy. Create a NAT gateway in each Availability Zone to ensure zone-independent architecture.
+    	-- Use a script to manage failover between instances.
+
+   Bandwidth -- 
+	- Scale up to 100 Gbps.
+	- Depends on the bandwidth of the instance type.
+   
+  Maintenance --
+	- Managed by AWS. You do not need to perform any maintenance.
+	- Managed by you, for example, by installing software updates or operating system patches on the instance.
+  
+  Public IP addresses--
+	- Choose the Elastic IP address to associate with a public NAT gateway at creation.
+	- Use an Elastic IP address or a public IP address with a NAT instance. You can change the public IP address at any time by associating a new Elastic IP address with the instance.
+  
+  Security groups
+	- You cannot associate security groups with NAT gateways. You can associate them with the resources behind the NAT gateway to control inbound and outbound traffic.
+	- Associate with your NAT instance and the resources behind your NAT instance to control inbound and outbound traffic.
+
+  Port forwarding -
+	- Not supported for NAT Gateway. 
+	- Manually customize the configuration to support port forwarding for NAT Instance. 
+
+** NACL --
+NACL stands for Network Access Control Lists.
+It is a security layer for your VPC that controls the inbound and outbound traffic of one or more subnets.
+It is an optional layer for your VPC.
+You can set up a Network ACL similar to the security group that adds an additional layer of security to your VPC.
+- It works like a firewall on Subnet Layer.
+- NACL also adds an additional layer of security associated with subnets that control both inbound and outbound traffic at the subnet level.
+- Maximum number of rules that exist per NACL: 20
+
+** Security Group :-
+- It adds a security layer to EC2 instances that control both inbound and outbound traffic at the instance level.
+- It works like a firewall on EC2 Instance. 
+- Maximum number of rules that can exist per Security Group: 50
+- Maximum number of Security Groups that can exist per instance: 5 
+
+
+** Maximum number of rules that can exist per instance: 5*50 + 20 = 270
+
+** Security Group vs NACL - 
+----------------------------
+1. 
+
+Security Group- 
+It supports only allow rules, and by default, all the rules are denied. You cannot deny the rule for establishing a connection. 
+
+NACL (Network Access Control List)-
+- It supports both allow and deny rules, and by default, all the rules are denied. You need to add the rule which you can either allow or deny it.
+
+2. 
+Security Group-
+It is a stateful means that any changes made in the inbound rule will be automatically reflected in the outbound rule. For example, If you are allowing an incoming port 80, then you also don't have to add the outbound rule explicitly.
+
+NACL (Network Access Control List)-
+- It is a stateless means that any changes made in the inbound rule will not reflect the outbound rule, i.e., you need to add the outbound rule separately. For example, if you add an inbound rule port number 80, then you also have to explicitly add the outbound rule.
+
+3. 
+Security Group- 
+It is associated with an EC2 instance.
+
+NACL- 
+It is associated with a subnet.
+
+4. 
+Security Group - 
+Security Group is applied to an instance only when you specify a security group while launching an instance.
+
+NACL - 
+NACL has applied automatically to all the instances which are associated with an instance.
+
+5. 
+Security Group- 
+It is the first layer of defense.
+
+NACL - It is the second layer of defense.
+
+
+** DHCP Protocol --
+Dynamic Host Configuration Protocol (DHCP) is a client/server protocol that automatically provides IP to the client computer.
+
+
+** What is Subnet ?
+=> A subnet, or subnetwork, is a segmented piece of a larger network. More specifically, subnets are a logical partition of an IP network into multiple, smaller network segments. The Internet Protocol (IP) is the method for sending data from one computer to another over the internet. Each computer, or host, on the internet has at least one IP address as a unique identifier.
+
+Organizations will use a subnet to subdivide large networks into smaller, more efficient subnetworks. One goal of a subnet is to split a large network into a grouping of smaller, interconnected networks to help minimize traffic. This way, traffic doesn't have to flow through unnecessary routs, increasing network speeds.
+
+** What is CIDR ?
+=> CIDR stands for Classless Inter-Domain Routing. It is an IP address assigning method that improves the efficiency of address distribution.
+=> Classless Inter-Domain Routing (CIDR) is a group of IP addresses that are allocated to the customer when they demand a fixed number of IP addresses.
+
+In CIDR there is no wastage of IP addresses as compared to classful addressing because only the numbers of IP addresses that are demanded by the customer are allocated to the customer.
+
+The group of IP addresses is called Block in Classless Inter - Domain (CIDR).
+
+CIDR follows CIDR notation or Slash notation. The representation of CIDR notation is x.y.z.w /n the x.y.z.w is IP address and n is called mask or number of bits that are used in network id.

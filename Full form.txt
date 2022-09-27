@@ -1,0 +1,31 @@
+Internet Protocol --
+----------------------
+TELNET - Teletype Network
+HTTP - Hyper Text Transfer Protocol
+HTTPS- Hypertext Transfer Protocol Secure
+FTP - File Transfer Protocol
+SMTP - Simple Mail Transfer Protocol
+POP3 - Post Office Protocol Version-3
+IMAP - Internet Messaging Access Protocol
+DHCP - Dynamic Host Configuration Protocol 
+
+AWS - Amazon Cloud Service
+IAAS - Infrastructure As a Service
+PAAS - Platform As a Service
+SAAS - Software As a Service
+
+EC2 Instance - Elastic Computing Cloud Instance
+VPC -  Virtual Private Cloud
+PAT - Port Address Translation
+NAT Gateway & Instance - Network Address Translation Gateway & Instance
+NACL - Network Access Control List
+VPN - Virtual Private Network
+S3 - Simple Storage Srvice
+EFS - Elastic File System
+EBS - Elastic Block Storage
+
+IAM - Identity Access Management
+AMI - Amazon Machine Images
+
+
+

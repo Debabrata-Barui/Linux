@@ -1,0 +1,73 @@
+for corn expression
+
+<minute> <hour> <day-of-month> <month> <day-of-week>
+
+2 1 * * *
+
+
+*/2 * * * *
+H/2 * * * *
+
+freestyle project:
+
+Jenkins freestyle projects allow users to automate simple jobs, such as running tests, creating and packaging applications, producing reports, or executing commands.
+
+pipeline:
+
+supports implementing and integrating continuous delivery pipelines
+
+multi-configuration project:
+
+Jenkins provides multi-configuration project. With this option we can create only one job with many configurations. Each configuration will be executed as a separate job. This is exactly what we need to simplify our scheduled tests, which can be used in conjunction with TestComplete.
+
+Folder:
+
+The Folders plugin allows you to organize jobs in hierarchical folders, much like how you organize files in directories in your file system. 
+
+multi-branch pipeline:
+
+Creates a set of Pipeline projects according to detected branches in one SCM repository(github).
+
+organziation folder:
+
+Creates a set of multibranch project subfolders by scanning for repositories.
+
+
+cron job setup
+
+parameterized job
+
+pipeline {
+    agent any
+
+    stages {
+        stage('git clone') {
+            steps {
+                git 'https://github.com/kishore5632/job_portal'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo "im going to test my repo"
+            }
+        }
+        stage('build') {
+            steps {
+               echo "test is success and build completed"
+            }
+        }
+     
+    }
+}
+
+
+to print 1  to 100 
+
+i=1
+while [ $i -le 100 ]
+do
+    echo $i
+    i=`expr $i + 1`
+done
+
+

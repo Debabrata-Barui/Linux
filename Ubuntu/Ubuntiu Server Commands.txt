@@ -1,0 +1,75 @@
+pwd - show the current location/path
+mkdir FolderName-- to make directory/folder
+cat > myfile.txt -- To write text into text file
+clrl + d -- Remove from multiple command in terminal
+touch NewFile.txt -- create text file
+sudo gedit helloWorld.txt -- edit text file/create text file..
+sudo nano helloWorld.txt - edit text file/create text file..
+Shift+ctrl+c -- copy text in terminal
+Shift+ctrl+v / Shift + Ins -- Paste text in terminal
+rmdir FolderName - Remove Directory/Folder
+cd -- go to the folder/to change the current directory.
+rm Test.txt - Remove the Text File 
+cp Test.txt /home   -- to Copy file
+mv Test.txt /home   -- to move the file
+head Test.txt -- to show the text file content in terminal 
+tail Test.txt -- to show the text file content in terminal
+exit - to exit
+sudo apt update -- to update the os
+sudo apt-get upgrad -- to upgrade/install the os
+sudo reboot -- to restart 
+sudo apt install unattended-upgrades -- to new package upgrade
+sudo apt install update-notifier-common
+cd /etc/apt/apt.conf.d -- to fine config directory
+ls - to show list of directory
+sudo nano 5unattended-upgrades
+press -- ctrl + w
+automatic-reboot
+press ctrl + x
+sudo nano 20auto-upgrades
+sudo reboot
+sudo systemctl status unattended-upgrades
+ip a-- check the network adapter
+sudo nano /etc/netplan/00-install-config.yaml
+ctrl + x -- to exit from command 
+sudo apt install openssh-server
+clear - to clear terminal
+whoami -- to show the user
+** To conect unbun server remotly in the Windows..
+Open CMD and Write down this --
+	ssh username@server-ip-address
+Ex- 	ssh bytemypi@192.168.0.200
+
+
+** To make a GUI infrastructure in Ubuntu Server
+21. sudo apt install lxde-core lxappearance
+
+** Open LXTerminal --
+22. sudo apt install xrdp
+23. sudo nano /etc/xrdp/startwm.sh
+24. press -- ctrl + end
+	command out 
+	#test..	
+	#exec
+	and write down --
+		lxsession -s LXDE -e LXDE
+
+25. sudo adduser xrdp ssl-cert
+26. sudo reboot
+
+Now you can access GUI Ubun server Remote Desktop in your PC by using Ubuntu Server IP and Password
+
+
+** Insall cockpit in Ubuntu server(LXTerminal)--
+1. sudo apt update
+2. sudo apt install cockpit
+3. sudo systemctl status cockpit.socket
+4. sudo nano /etc/netplan/00-installer-config.yaml - to configure this file
+	renderer: NetworkManager -- write down this code in the last
+	press ctrl + x and ctrl + y 
+
+5. sudo netplan try
+
+	
+	
+ 

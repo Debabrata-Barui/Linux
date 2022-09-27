@@ -1,0 +1,44 @@
+** Elastic Load Balancer -->
+--------------------------------
+- It is used to balance of trafic.
+- It provides the Fault Tolarence and High Availability
+	Fault Tolarence - It means, It sequares the network from any network fault/error.
+	High Availability - It means, It runs or avilable the network in 24x7 times.
+
+- Load Balancer distributes the web trafic to the available server.
+- Load Balancer refers to efficient distributing incoming traffic across a group of backends server.
+- For maintaing fault Tolarence and high availability we should create the EC2 Instance in multiple avalability zone.
+
+** There are three types of Load Balancer --
+1. Application Load Balancer :- 
+	- If want get that our Mobile appication and desktop application are opened within minimum time  
+	- It is worked on Application Layer of OSI Model.
+	- It supports HTTP and HTTPS protocol.
+2. Network Load Balancer :-
+	- If we want to latency, like if we want get minimal response time then we should use Network Load Balancer.
+	- It is worked on Transport Layer OSI Model.
+	- It works on TCP, UDP and TLS Protocol.
+3. Classic Load Balancer :- (Application Load Balancer + Network Load Balancer)
+	- It is worked on Application and Transport Layers of OSI Model
+	- It supports HTTP, HTTPS, TCP, UPD, and TLS Protocols
+
+
+
+ ** Components of Load Balancer  --
+-----------------------------------
+
+1. Listner --
+2. Target Group -- Target group is group of Instances 
+3. Target -- EC2 Instance is called Target. 
+		There are 3 types of Target --
+		1. IP Based Target
+		2. Lamda Based Target
+		3. Instance Based Target
+	When Target type is IP, you can use only following CIDR--
+		1. 10.0.0.0/8
+		2. 100.64.0.0/10
+		3. 172.16.0.0/12
+		4. 192.168.0.0/16
+	You can't specify Public IP as Target IP.
+
+		

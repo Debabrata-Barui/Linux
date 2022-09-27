@@ -1,0 +1,27 @@
+sudo apt-get update
+sudo apt-get install openjdk-8-jdk
+wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+sudo sh -c 'echo deb https://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+sudo apt-get update
+sudo apt-get install jenkins
+systemctl start jenkins
+systemctl enable jenkins
+systemctl status jenkins
+sudo apt install git
+cat /var/lib/jenkins/secrets/initialAdminPassword
+
+------------------------------------------------------------------------------------------------------
+
+Change Port for Jenkins in Linux
+1. Start by opening the Jenkins configuration file with:
+
+sudo nano /etc/default/jenkins
+
+2. Scroll down until you find the following lines:
+
+# port for HTTP connector (default 8080; disable with -1)
+HTTP_PORT=8080
+
+3. Edit the second line to include the port number you want to specify. For instance:
+
+HTTP_PORT=8081

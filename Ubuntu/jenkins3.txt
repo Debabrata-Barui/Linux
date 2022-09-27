@@ -1,0 +1,83 @@
+master ,slave setup
+
+The Jenkins master acts to schedule the jobs and assign slaves and send builds to slaves to execute the jobs. It will also monitor the slave state (offline or online) and getting back the build result responses from slaves and the display build results on the console output.
+
+Steps :
+1. Setup EC2 instance for slave
+2. Create jenkins user and Install Java, Maven in Slave node
+3. upload public keys from master to slave node.
+4. verify ssh connection from master to slave
+5. Register slave node in Jenkins master
+6. Run build jobs in Jenkins slave
+ 
+ you should use slave server
+step1:
+Updating packages in apt 
+sudo apt update
+
+step2:
+Install Java
+
+sudo apt-get install openjdk-8-jdk
+
+step3:
+
+Create User as Jenkins
+sudo useradd -m jenkins
+sudo -u jenkins mkdir /home/jenkins/.ssh
+
+step4: you should use master server
+
+Add SSH Keys from Master to Slave 
+Execute the below command in Jenkins master EC2.
+
+use these command to create ssh
+ssh-keygen
+
+sudo cat ~/.ssh/id_rsa.pub
+
+step5: you should use salve server
+Now Login to Slave node and execute the below command
+
+sudo -u jenkins vi /home/jenkins/.ssh/authorized_keys
+
+step6: you should master server
+Now go into master node
+
+ssh jenkins@172.31.20.31
+
+use slave private ip
+
+step7: master node
+
+sudo cp ~/.ssh/known_hosts  /var/lib/jenkins/.ssh
+
+step8:
+to view your private key
+
+sudo cat ~/.ssh/id_rsa
+
+
+
+
+
+vi /etc/ssh/sshd_config
+PasswordAuthentication Yes
+systemctl restart sshd
+
+use these command to create ssh
+ssh-keygen
+/root/.ssh/id_rsa
+Your identification has been saved in /root/.ssh/id_rsa.
+Your public key has been saved in /root/.ssh/id_rsa.pub.
+
+ssh-copy-id -i root@3.82.214.105 
+
+
+
+
+
+
+
+
+

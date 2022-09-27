@@ -1,0 +1,26 @@
+** There are 6 types of Purchasing EC2 Intance in AWS --
+------------------------------------------------------
+1. On demand - AWS On demand Instance are virtual server that run in aws or AWS Relational Database  Service  and are purchased at a fixed rate per hours.
+- AWS Recomended using On-Demand Instance for applications with short term irregular workload that cannot be interrupted.
+ - They are also suitable for use during testing and development of applications on EC2.
+ - With On- Demand Instance you only paly for EC2-Instance you use. 
+***********************
+ - It takes charge basis per an hours but It takes bill on per seecond for Ubuntu and Linux Server.
+ - We can do scale up and scale down
+ - We do palyment basis of month.
+ - After Luching the instance Amazon takes the charges of this instance but after terminated don't need to give any charges. 
+ - After stop the instance AWS does not take any charges for instance but it takes minimum charges for EBS storage.
+ - But if we use linux server for 1 hours then we have to pay for one hour only but if we use Windows Server for 1 hour then we have to for 2 hours that means double. 
+
+2. Dedicated Instance - Dedicated Instances are Amazon EC2 instances that run in a VPC on hardware that's dedicated to a single customer. Your Dedicated instances are physically isolated at the host hardware level from instances that belong to other AWS accounts. Dedicated instances may share hardware with other instances from the same AWS account that are not Dedicated instances. Pay for Dedicated Instances On-Demand, save up to 70% by purchasing Reserved Instances, or save up to 90% by purchasing Spot Instances.
+- Here VPC is not changed.
+- Here many dedicated instances are in a Decated Server, They are all Isolated. 
+
+3. Dedicated Host - 
+4. Spot Instance - It is used for minimum time for development or testing purpose. It is very chepest.
+5. Schedule Instance - We can buy this instance for 8 hours, like 10AM to 5PM 
+6. Reserved Instance - We can use for 1 to 3 Years. It is also chepest but not than spot instance.
+ We have to advance payment to reserve this insyance. 
+ 
+** There are four ways to pay for amazon EC2 instance i.e On-demand, Reserve Instance and Spot Instance.
+** You can also pay for Dedicated host which provide you with EC2 instance capacity on Physical Servers dedicated for your use. 
