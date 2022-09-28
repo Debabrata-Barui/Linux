@@ -1,0 +1,25 @@
+how to install apache server/httpd
+-----------------------------------------
+sudo su -- to enter into root folder
+yum install httpd -- to install httpd/apache server
+systemctl enable httpd -- to enable httpd 
+systemctl start httpd -- to start httpd
+systemctl restart httpd -- to restart httpd
+systemctl status httpd -- to check status of httpd
+ifconfig -- to find ip address [copy this inet 172.16.190.133]
+cd /var/www/html -- go to html folder
+sudo gedit index.html  -- to create index.html file 
+
+Write the HTML code --
+<html>
+   <h1> Monkey Man</h1>		
+</html>
+
+open web browser and paste the 172.16.190.133 ip address into the URL bar
+
+
+To remove files of httpd 
+----------------------------
+yum remove httpd* -- To remove files of httpd 
+yum remove httpd  -- To remove files of httpd 	
+------------------------------------------------

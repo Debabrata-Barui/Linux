@@ -1,0 +1,40 @@
+ Install OpenSSH Server Software Package
+--------------------------------------------
+sudo yum –y install openssh*
+	Or
+sudo yum –y install openssh-server openssh-clients
+
+sudo systemctl start sshd
+sudo systemctl status sshd
+systemctl stop sshd
+sudo systemctl enable sshd
+sudo systemctl disable sshd
+
+* Configure SSH ---
+----------------------------
+# sudo su
+# vi /etc/ssh/sshd_config
+  Ucommand--
+	PermitRootLogin no
+	PubkeyAuthentication yes
+	PasswordAuthentication yes
+	ChallengeResponseAuthentication no
+	
+	UsePAM yes
+
+  Command Out--
+	# PasswordAuthentication no
+	# GSSAPIAuthentication yes
+	# GSSAPICleanupCredentials no
+
+
+To give the sudo priviledge to the ansible user --
+-----------------------------------------------------
+
+# visudo   
+- Now go to inside this file
+find this ---
+	root ALL=(ALL)		ALL
+add this--
+	root    ALL=(ALL)       ALL
+	ansible ALL=(ALL) NOPASSWD: ALL

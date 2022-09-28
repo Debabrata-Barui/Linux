@@ -1,0 +1,10 @@
+** How to configure ipconfig
+-------------------------------
+ip addr
+ip link
+	OR
+ip -s link
+yum provides ifconfig
+yum whatprovides ifconfig
+yum install net-tools
+ifconfig -a

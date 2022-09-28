@@ -1,0 +1,48 @@
+ yum remove java* - To remove java
+ yum list | grep openjdk
+ yum install java
+ java -version
+ su ~ - to go to home
+ ls -la - To find the hidden file 
+ file $(which java)
+ file /etc/alternatives/java -- paste the path.. ---" /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.342.b07-1.el7_9.x86_64/jre/bin/java "
+ cat .bash_profile - to set the environment variable
+	export JAVA_HOME = "paste the java jre path"
+	export PATH=$JAVA_HOME/bin:$PATH 
+
+ source .bash_profile
+ echo $PATH
+ echo $JAVA_HOME
+
+
+** Install Java Compiler 
+ yum install java-devel
+
+** To Set Environment Variable 
+ vi /etc/profile.d/jdk_home.sh
+ Paste the code-- 
+..................
+
+#!/bin/sh
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.342.b07-1.el7_9.x86_64/jre
+export JRE_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.342.b07-1.el7_9.x86_64/jre
+export PATH=$JAVA_HOME:$JRE_HOME:$PATH
+
+ Javac Path--  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.342.b07-1.el7_9.x86_64/bin
+
+
+
+ yum install java-1.8.0
+ yum install java-devel
+ cd /usr/lib/jvm/java-1.8.0/bin
+
+** Set the jre file in the Environment Variable 
+vi /home/centos/.bash_profile
+/usr/lib/jvm/java-1.8.0/jre
+/usr/lib/jvm/java-1.8.0-openjdk/jre
+
+
+** Configure in --
+	# vi /home/centos/.bash_profile
+	
+	export /usr/lib/jvm/java-1.8.0/jre

@@ -1,0 +1,38 @@
+How to install XRDP on CentOS 7 or RHEL 7
+------------------------------------------
+
+Before all else, install Gnome GUI on CentOS 7 or RHEL 7.
+Then install and configure EPEL repository with this command
+
+# yum install epel-release
+
+# yum -y install epel-release && rpm -Uvh http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-5.el7.nux.noarch.rpm
+
+# cd /etc/yum.repos.d
+
+# ll
+
+Part 1: Install XRDP on CentOS 7
+
+# yum -y install xrdp tigervnc-server
+
+After XRDP is installed, you can start alnd enable the service with the command:
+# systemctl start xrdp
+# systemctl enable xrdp
+# systemctl status xrdp => Check the status of xrdp
+
+XRDP will now listen on 3389. You can verify this with the following netstat command:
+# netstat -antup | grep xrdp
+
+Configure the firewall
+# firewall-cmd --permanent --add-port=3389/tcp
+# firewall-cmd --reload
+# systemctl status firewalld
+# systemctl stop firewalld
+
+Configure SELinux
+# chcon –type=bin_t /usr/sbin/xrdp
+# chcon –type=bin_t /usr/sbin/xrdp-sesman
+
+
+

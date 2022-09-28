@@ -1,0 +1,228 @@
+cat > Test1.txt -- To create Text-1
+ctrl+d -- exit from cat
+cat >> Test.txt -- To Insert New Line
+cat Test1.txt Test2.txt > Test3.txt -- To concatinate Test1 and Test2 into Test3 
+touch Test4.txt -- To create a new file with time stamp
+stat Test4.txt -- To show time Test4 file time stamp. There are 3 types of time stamps -- Access, Modify, Change
+vi test5.txt
+	:i - Insert line
+	:w - save
+	:q / :q! - quite
+	:wq / :wq! / :x  - save and quite 
+
+nano Test6.txt
+	ctrl+o -- save
+	clrl+x -- exit 
+	Press Enter to exit from nano
+
+mkdir dir1 -- To Make Directory/Folder
+cd dir2 -- To Change Directory
+ls -- List Directory/Files
+cd .. -- To go to the parent directory
+pwq -- Print Working Directory / Current Location
+cd ../../.. -- to go to the previous direcory 
+mkdir dir1 dir2 dir3
+
+**To Create Hidden File ***
+touch .file.txt
+
+**To Create Hidden Directory ***
+mkdir .dir1 
+
+**To show the all hidden and all file**
+ls -a
+
+**To copy file data**
+cp source.txt destination.txt
+
+** To Forcefully Copy
+cp  -R apache-tomcat-8.0.33 /root/
+
+** Copy all files in a time
+cp * -R /home/ec2-user/
+
+**To Cut and Paste a File**
+mv sourceFile1 dir1
+
+** Move many files and folder in a time
+mv Folder1 Folder2 Folder3 File1 File2 File3 /home/Dir1/
+
+** Move all folders and files
+mv * /home/Dir2/
+
+**To Rename File**
+mv OldFileName NewFileName
+
+**To Remove Directory**
+rmdir dir1 -- if directory is empty
+
+emdir -p dir1/dir2 -- Remove both parent and child directory
+
+rmdir -pv dir1-- Remove all parent and sub directory
+
+rm -rf dir1-- Remove forfully to all file with directory
+
+rm -rp dir1
+
+rm -r dir -- Remove Empty Directory
+ 
+--------------------------------------------
+hostname -- check machine name
+ifconfig -- check ip address
+hostname -i -- Check Particular Ip
+cat /etc/os-release -- check the linux version
+cat /etc/os-rel* 
+
+* YUM -- yum is a package/repository. it's pre installed in linux. It's full form - Youllowdog Updater Modified. It is used to install update, remove to any software package.
+* httpd -- Hyper Text Transfer Protocol Daemon
+
+** Install Apache Server**
+yum install httpd -y
+
+** Remove Apache**
+yum remove httpd
+
+** Update Apache**
+yum update httpd
+
+** start Apache**
+service httpd start
+
+**check status**
+service httpd status
+
+** To run automatic on the Apache **
+chkconfig httpd on
+
+** To off the auto on **
+chkconfig httpd off
+
+** To check the software location**
+which httpd
+which tree
+
+** To check the user**
+whoami
+
+** to broudcust the message to the multi users/ to print message**
+echo "Hello to all"
+
+** To redirect the message to file/to create new file**
+echo "Welcome!" > Test.txt
+
+** To add/appand new message in old file**
+echo "Name: Debabrat" >> Test.txt
+
+** To remove the data from file**
+echo > Test.txt
+
+** To find out particular text**
+grep Debu /etc/Test.txt
+
+** To sort in accessending**
+sort test.txt
+ 
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+** To create User ** 
+useradd debuUser1
+cat /etc/passwd
+
+** To ceate group**
+groupadd Maventic
+cat /etc/group
+
+[Note:- Whenever we create user, then group is automatically created according to username but Whenever we create group then user is not created.]
+
+** Add user in group**
+gpasswd -a mm0650 Maventic --> to add one user to Maventic group
+gpasswd -M mm0651,mm0652,mm0653, mm0654 Mavetic --> to create many user in Maventic Group
+
+
+Options:
+  -a, --add USER                add USER to GROUP
+  -d, --delete USER             remove USER from GROUP
+  -h, --help                    display this help message and exit
+  -Q, --root CHROOT_DIR         directory to chroot into
+  -r, --delete-password         remove the GROUP's password
+  -R, --restrict                restrict access to GROUP to its members
+  -M, --members USER,...        set the list of members of GROUP
+  -A, --administrators ADMIN,...
+                                set the list of administrators for GROUP
+
+
+** How to Delete the User
+# userdel <UserName>
+
+** How to Delete the Group
+# groupdel <GroupName>
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+**Harlink - It is used to backup. It is use on only file not for Directory.*
+ln file1 backupFile1 
+
+**Softlink**  
+ln -s file1 softlinkFile1 -- To create shoutcut of a directory and file also.
+
+** To marge many files into one file**
+ tar -cvf test.tar dir1 -- dir1.tar c-crete v- verbrose f-forcefully
+
+** To create zip/compress to a file**
+gzip dir1 -- dir1.tar.gz
+
+** To make uzip a file **
+gunzip dir1.tar.gz
+
+** To Extract Tar file**
+tar -xvf dir1.tar -- x-Extract v- verbrose f-forcefully
+
+** To download software**
+wget "<url of software>" 
+
+
+------------------------------------------------------------------------
+****chmod , chown, chgrp*********
+----------------------------------
+* chmod -- It is used to change the access mode of a file.
+	chmod 777 file.txt
+* chown -- Change the ower of file or directory
+	chown user1 file.txt
+* chgrp -- It is used to change the group of file or directory.
+	chgrp devops file.txt
+	ls -l
+
+---------------------------------------------------------------------
+** To see the Disk Space
+# df -h
+
+** fdisk command -->
+# lsblk ==> Show the disk partition
+# fdisk /dev/sda ==> create a new Partiton using fdisk tool and select partition type LVM 
+# partprobe
+# pvcreate /dev/sda1
+
+
+** How to clean cash file of Linux
+# >/var/log/messages
+# yum clean chached
+
+
+
+
+
+
+ 
+
+
+
+ 
+
+
+
+
+ 
+
+
+

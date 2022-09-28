@@ -1,0 +1,115 @@
+https://www.unixmen.com/setting-samba-primary-domain-controller-centos-7/
+-------------------------------------------------------------------------
+
+# hostnamectl
+# nmtui
+# yum update -y
+# yum -y install samba*
+# smbd --version
+# ls /etc/samba
+# mv /etc/samba/smb.conf /etc/samba/smb.conf.bak
+# ls 
+# vi  /etc/samba/smb.conf
+	[Global]
+	workgroup = NETWORKHERPS
+	security = user
+	domain master = yes
+	domain logons = yes
+	local master = yes
+	preferred master = yes
+	passdb backend = tdbsam
+	logon path = \\%L\Profiles\%U
+	logon script = logon.bat
+	add machine script = /usr/sbain/useradd -d /dev/null -g 200 /sbin/nologin -M %u
+	
+	[homes]
+	comment = Home Directories
+	browseable = yes
+	writable = yes
+	
+	[printers]
+	comment = All Printers
+	path = /var/spool/samba
+	printable = Yes
+	print ok = Yes
+	browsable = No
+	
+	[netlogon]
+	comment = Network Logon Service
+	path = /var/lib/samba/netlogon
+	browsable = No
+	writable = No
+	
+	[Profiles]
+	path = /var/lib/samba/profiles
+	create mask = 0755
+	directory mask = 0755
+
+
+# testparm => To check the configuration file
+# mkdir -m 1777 /var/lib/samba/netlogon
+# mkdir -m 1777 /var/lib/samba/profiles
+
+# useradd user1
+# useradd user2
+# groupadd -g 200 machine
+
+# smbpasswd -m -a machine1$
+# smbpasswd -a root
+# smbpasswd -a user1
+# smbpasswd -a user2
+# systemctl start smb
+# systemctl enable smb 
+# systemctl status smb
+# firewall-cmd --add-service=samba --permanent
+# firewall-cmd --reload
+
+# setsebool -P samba_domain_controller on 
+# setsebool -P samba_enable_home_dirs on
+
+# chcon -t samba_share_t /var/lib/samba/netlogon
+# chcon -t samba_share_t /var/lib/samba/profiles
+
+# vi /etc/sysconfig/selinux
+	SELINUX=disbaled
+
+# firewall-cmd --permanent --add-port=53/tcp
+  firewall-cmd --permanent --add-port=53/udp
+  firewall-cmd --permanent --add-port=88/tcp
+  firewall-cmd --permanent --add-port=88/udp
+  firewall-cmd --permanent --add-port=135/tcp
+  firewall-cmd --permanent --add-port=137/tcp
+  firewall-cmd --permanent --add-port=137/udp
+  firewall-cmd --permanent --add-port=138/udp
+  firewall-cmd --permanent --add-port=139/tcp
+  firewall-cmd --permanent --add-port=389/tcp
+  firewall-cmd --permanent --add-port=389/udp
+  firewall-cmd --permanent --add-port=445/tcp
+  firewall-cmd --permanent --add-port=464/tcp
+  firewall-cmd --permanent --add-port=464/udp
+  firewall-cmd --permanent --add-port=636/tcp
+  firewall-cmd --permanent --add-port=1024-5000/tcp
+  firewall-cmd --permanent --add-port=1024-5000/udp
+  firewall-cmd --permanent --add-port=3268/tcp
+  firewall-cmd --permanent --add-port=3269/tcp
+  firewall-cmd --permanent --add-port=5353/tcp
+  firewall-cmd --permanent --add-port=5353/udp
+
+# ping nt-win10 => Ping the client macine 
+# vi /etc/hosts
+
+	10.10.10.11 nt-win10 => Add ip address and host name of windows 10 client machine
+
+
+
+** Go to host file of windows 7 or 10
+C"\\Windows\System32\drivers\etc
+open the hosts file --
+	10.10.10.100 server.hostname.local ==> Enter the server ip and host name
+
+** open cmd
+	ping server host name 
+
+
+	 
+	

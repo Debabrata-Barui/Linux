@@ -1,0 +1,349 @@
+CentOs Default Password - centos
+1. sudo su
+2. yum update
+
+** Linux OS = Linux Karnel + GNU
+** GNU => GNU was a free sofware system movment in 1983. It was a project which was provide free software.
+	GNU Stands for GNU stands for “GNU's Not Unix.”. It is collecion of free sofware. 
+** Becally Linux is a Karnel after join with JNU it became a Operating System.
+
+** There are many companys in the market who redesigned to Linux --
+1. RHEL - Red Hat Enterprise Linix 
+2. Fedora Group
+3. Debian
+4. Other - Ubuntu, CentOS(Community Enterprise Operating System), Amazon Linux, Kali Linux
+
+
+CentOS stand for Community Enterprise Operating System. It is one of the Linux Distributions started by Gregory Kurtzer.It provides an enterprise-class free and open-source Operating System, which is also functionally compatible with the Red Hat Enterprise Linux (RHEL).
+yum is the package manager for the CentOS.
+
+Working of CentOS
+Here are some commands which will help in working of CentOS, such as:
+
+ls: This lists out the directory contents.
+cd: This is used to change the directory or navigate a different folder from the current folder.
+mv: This is the move command. It helps to move a file from one directory to a different location or rename a file.
+man: This is the command to get manual about any other command used in the OS.
+mkdir:This command is used to create new directories (and also subdirectories).
+rmdir: This is the command to delete the directory. It will also recursively remove the files and folders in the mentioned directory.
+touch: This command creates an empty file. This is also called the make file command.
+rm: rm removes the files just like rmdir removes the directories.
+locate:This command will help you to locate a file in the whole of storage.
+clear:This is the command to clear the terminal screen.
+sudo yum update:This will update all the installed packages.
+sudo yum install <package name>: This command will install the mentioned package.
+
+* chmod -- It is used to change the access mode of a file.
+	chmod 777 file.txt
+* chown -- Change the ower of file or directory
+	chown user1 file.txt
+*chgrp -- It is used to change the group of file or directory.
+	chgrp devops file.txt
+	ls -l
+	
+	
+File/Folder Permission in Linux -->
+There are 3 types fact -----------
+1. Owner Permission - u
+2. Group Permission - g
+3. All other user permission - o
+4. Usre + Group + All Other User - ugo or a 
+------------------------------
+Types of permission -->
+	1. Read -> r -> 4
+	2. Write -> w -> 2
+	3. Execute -> x -> 1	
+	4. No Permission -> - -> 0
+
+Ex- rwx
+Or- 421
+---------------------------
+
+- => Regular file
+d => Directory
+l => Symbolic Link - It represent the softlink/hardlink
+------------------------------
++ => Add Permission
+- => Remove Permission
+= => only set the value | replacing the permission
+
+----------------------------------
+Example-- 
+mkdir dirx
+ls -l
+Output --
+drwxrwxr-x 2 debu debu 6 Jul 22 10:19 dirx
+Explain-- 
+d -> Regular Directory
+rwx -> Owner/User
+rwx -> Group
+r-x -> Other Users
+2 -> Symbolic Link
+debu -> Owner
+debu -> Group
+6 -> Directory syze in byte
+Jul 22 10:19 -> Current Date & Time  
+dirx -> Directory Name
+
+Example-2
+touch file.txt
+
+Output->
+-rw-rw-r-- 1 debu debu 0 Jul 22 10:31 file.txt
+Explain-- 
+- ->  Regular file
+rw- -> Owner/User
+rw- -> Group
+r-- -> Other Users
+1 -> Symbolic Link
+debu -> Owner
+debu -> Group
+0 -> File syze in byte
+Jul 22 10:19 -> Current Date & Time  
+file.txt -> File Name
+
+
+-----Permission Command ------
+cd Desktop
+mkdir Debu
+touch Test.txt
+ls
+ls -l  -- It shows permission file
+---------------------------------
+Output --
+-rw-rw-r-- 1 admin admin 12 Jul 11 17:43 Test.txt
+
+- => Regular Directory
+rw- => User has Read & Write Permission
+rw- => Group has Read and Write Permission
+r-- => All other user  have only Read Permission
+
+-------------------------------------------------------
+---------Add Permission Command-------------------------
+chmod u+x Test.txt => User + Execute  (-rwxrw-r--. 1 admin admin 12 Jul 11 17:43 Test.txt
+					- => Regular Directory
+ 					rwx => User has Read & Write & Execute Permission
+					rw- => Group has Read & Write Permission
+					r-- => All other user  have only Read Permission
+				
+				     )
+
+chmod g+rw Test.txt => Group + Read & Write (	-rwxrw-r--. 1 admin admin 12 Jul 11 17:43 Test.txt
+						- => Regular Directory
+						rwx => User has Read & Write & Execute Permission
+						rw- => Group has Read & Write Permission
+						r-- => All other user  have only Read Permission
+
+   					    )
+
+
+
+chmod g+rwx Test.txt => Group + Read & Write & Execute ( -rwxrwxr--. 1 admin admin 12 Jul 11 17:43 Test.txt
+							 - => Regular Directory
+							 rwx => User has Read & Write & Execute Permission
+							 rwx => Group has Read & Write & Execute Permission		 
+							 r-- => All other user  have only Read Permission
+							)
+
+
+
+chmod o+rw Test.txt => Other + Read & Write ( -rwxrwxrw-. 1 admin admin 12 Jul 11 17:43 Test.txt
+						- => Regular Directory
+						rwx => User has Read & Write & Execute Permission
+						rwx => Group has Read & Write & Execute Permission		 
+						rw- => All other user  have only Read & Write Permission
+						
+					    )
+
+
+------------------------------------------------------------------------------------------------------------
+---------Remove Permission Command-------------------------
+chmod u-x Test.txt => User - Execute ( -rw-rwxrw-. 1 admin admin 12 Jul 11 17:43 Test.txt
+Or--  					
+chmod 100 Test.txt			- => Regular Directory
+1 - User				rw- => User has Read & Write Permission. Remove the execute permission
+0 - Group   				rwx => Group has Read & Write & Execute Permission		 
+0 - Other				rw- => All other user  have only Read & Write Permission 
+
+				     )
+
+
+chmod g-rw Test.txt => Group - Read & Write ( -rw---xrw-. 1 admin admin 12 Jul 11 17:43 Test.txt
+Or--  					
+chmod 060 Test.txt				-   => Regular Directory
+						rw- => User has Read & Write Permission.
+						--x => Group has only Execute Permission
+						rw- => All other user  have only Read & Write Permission
+
+					    )
+
+
+chmod o-rw Test.txt => Other - Read & Write ( -rw---x---. 1 admin admin 12 Jul 11 17:43 Test.txt
+Or--  					
+chmod 006 Test.txt				-   => Regular Directory
+						rw- => User has Read & Write Permission.
+						--x => Group has only Execute Permission
+						--- => All other user does not have any  Permission
+					    )
+
+------------------------------------------------------------------------------------------------------------
+---------Replacing( = )Permission Command-------------------------
+chmod g=x Test.txt => Group = Execute Permission ( -rw---x---. 1 admin admin 12 Jul 11 17:43 Test.txt
+Or--  					
+chmod 001 Test.txt					-   => Regular Directory	
+							rw- => User has Read & Write Permission.
+							--x => Group has only Execute Permission
+							--- => All other user does not have any  Permission	
+				      		 )
+
+
+chmod g=r Test.txt => Group = Read Permission ( -rw-r-----. 1 admin admin 12 Jul 11 17:43 Test.txt
+Or--  					
+chmod 001 Test.txt				-   => Regular Directory
+						rw- => User has Read & Write Permission.
+						r-- => Group has only Read Permission(Here Execute permission replace by read permission)
+						-- => All other user does not have any  Permission
+					      )
+
+
+
+
+---------------------------------------------------------------------------------------------------------
+-------Usre + Group + All Other User Permission----------------------------
+chmod a+rwx Test.txt
+	or 
+chmod ugo+rwx Test.txt => User & Group & All Other User + Read & Write & Execute ( -rwxrwxrwx. 1 admin admin 12 Jul 11 17:43 Test.txt
+										   	
+chmod 777 Test.txt									-   => Regular Directory
+											rwx => User has Read & Write & Execute Permission
+ 4 + 2 + 1 = 7	--> User/Owner								rwx => Group has Read & Write & Execute Permission
+ 4 + 2 + 1 = 7	--> Group 								rwx => All Other Users have Read & Write & Execute Permission
+ 4 + 2 + 1 = 7	--> Other Users
+ 										  )
+
+------------------Remove All Permission ------------------------
+chmod a-rwx Test.txt
+	or 
+chmod ugo-rwx Test.txt => User & Group & All Other User - Read & Write & Execute ( ----------. 1 admin admin 12 Jul 11 17:43 Test.txt
+										   -   => Regular Directory	
+										   --- => User has no permission
+										   --- => Group has no permission
+										   --- => All other users have no permission
+										 )
+
+
+
+----------------------------------------------------------------------------------------------------------------
+Simple Command  
+----------------
+pwd - show the current location/path
+
+mkdir FolderName-- to make directory/folder
+
+cat > myfile.txt -- To write text into text file
+
+clrl + d -- Remove from multiple command in terminal
+
+touch NewFile.txt -- create text file
+
+sudo gedit helloWorld.txt -- edit text file/create text file..
+
+sudo nano helloWorld.txt - edit text file/create text file..
+
+Shift+ctrl+c -- copy text in terminal
+
+Shift+ctrl+v / Shift + Ins -- Paste text in terminal
+
+rmdir FolderName - Remove Directory/Folder
+
+rm -rf FolderName -- To remove folder with subfolder and files.. -rf means recursive fourcefuly
+
+cd -- go to the folder/to change the current directory.
+
+cd .. -- to back from directory
+
+rm Test.txt - Remove the Text File 
+
+cp Test.txt /home   -- to Copy file
+
+mv Test.txt /home   -- to move the file
+
+head Test.txt -- to show the text file content in terminal 
+
+tail Test.txt -- to show the text file content in terminal
+
+exit - to exit
+
+sudo apt update -- to update the os
+
+sudo apt-get upgrad -- to upgrade/install the os
+
+sudo reboot -- to restart 
+
+sudo apt install unattended-upgrades -- to new package upgrade
+
+sudo apt install update-notifier-common
+
+cd /etc/apt/apt.conf.d -- to fine config directory
+
+ls - to show list of directory
+
+ls -l -- To show list of directory with permission
+
+sudo reboot -- to restart
+
+sudo yum update  -- To update centos
+
+sudo su  -- to get root directory
+
+yum update -- to update yum repository
+
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm  -- To download google chrome
+
+sudo yum localinstall google-chrome-stable_current_x86_64.rpm -- To install google chrome
+
+----------------------------------------------------------------------------
+How to install oracle 19c Server
+-------------------------------
+uname -a - to get systm information
+
+grep MemTotal /proc/meminfo -- to get the total memory space
+
+grep SwapTotal /proc/meminfo -- to get the total swap memory space
+
+df -h /tmp -- to get the temp file structure
+
+df -h -- to get the all file structure.
+
+grep "model name" /proc/cpuinfo -- to get the cpu info
+
+
+
+** File Systems of Linux -->
+---------------------------
+1. /home -> Home directory for other users.
+2. /root -> It is home directory for root user.
+3. /boot -> It contains bootable file for Linux OS boot.
+4. /etc  -> It contains all configuration file.
+5. /usr  -> By default software are installed in this directory.
+6. /opt  -> Optional Application software packages are installed here. Like Google Chrome.
+7. /bin  -> It means Binary Directory. It contains normal usage commands(li, cd, mkdir..) used by all users including root users.
+8. /sbin  -> It means System Binary Directory. It contains command used y only root user.
+9. /dev   -> Essential device files this include termial devices, usb or any device attached to the system.
+   
+
+** To know the kernal version of centos 7.
+=> # uname -r
+	3.10.0-1160.76.1.el7.x86_64
+Here 3 is the karnel version.
+
+** What is Kernel?
+==> Kernel is central component of an operating system that manages operations of computer and hardware. It basically manages operations of memory and CPU time. It is core component of an operating system. Kernel acts as a bridge between applications and data processing performed at hardware level using inter-process communication and system calls. 
+
+Kernel loads first into memory when an operating system is loaded and remains into memory until operating system is shut down again. It is responsible for various tasks such as disk management, task management, and memory management. 
+
+It decides which process should be allocated to processor to execute and which process should be kept in main memory to execute. It basically acts as an interface between user applications and hardware. The major aim of kernel is to manage communication between software i.e. user-level applications and hardware i.e., CPU and disk memory. 
+
+** How to search the File ?
+# rpm -qa | grep nfs-utils
+

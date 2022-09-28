@@ -1,0 +1,22 @@
+** Configure NGINX Server
+
+** Step 1 — Adding the EPEL Software Repository
+sudo yum install epel-release
+
+** Step 2 — Installing Nginx
+sudo yum install nginx
+
+** Step 3 — Starting Nginx
+sudo systemctl start nginx
+
+sudo systemctl status nginx
+
+sudo firewall-cmd --permanent --zone=public --add-service=http
+sudo firewall-cmd --permanent --zone=public --add-service=https
+sudo firewall-cmd --reload
+
+** Search in Browser
+http://server_domain_name_or_IP/
+
+
+** The default server root directory is /usr/share/nginx/html

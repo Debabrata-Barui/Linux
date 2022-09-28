@@ -1,0 +1,41 @@
+------------------------------------------------
+How to Install Tomcat Apache Server in centos 7
+--------------------------------------------------
+java -version
+yum install tomcat tomcat-webapps tomcat-admin-webapps tomcat-docs-webapp tomcat-javadoc
+systemctl start tomcat
+systemctl enable tomcat
+systemctl status tomcat
+
+To set the userrole and password --> 
+vi /usr/share/tomcat/conf/tomcat-users.xml
+	<user username="admin" password="admin" roles="admin-gui,manager-gui" />
+
+To change the port -->
+vi /usr/share/tomcat/conf/server.xml
+
+systemctl restart tomcat
+firewall-cmd --permanent --add-port=8080.tcp
+firewall-cmd --reload
+systemctl status firewalld
+systemctl stop firewalld
+
+
+-------------------------------------------------------------------------
+
+
+https://archive.apache.org/dist/tomcat/tomcat-8/v8.0.33/bin/
+
+
+----------------------------------------------------
+*** How to Install Tomcat Apache Server in centos 7
+----------------------------------------------------
+-> In AWS Import Security Group --
+	Custom TCP - 8080 - Anywhere
+
+		
+# cd /opt
+# wget https://archive.apache.org/dist/tomcat/tomcat-8/v8.0.33/bin/apache-tomcat-8.0.33.tar.gz
+# tar -xvzf apache-tomcat-8.0.33.tar.gz
+# cd /opt/tomcat/bin
+# sh sh startup.sh
