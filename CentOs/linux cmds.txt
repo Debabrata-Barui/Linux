@@ -15,6 +15,9 @@ exit	Exits the current shell session
 sudo	Executes commands as superuser
 shutdown	Shutdowns your machine
 htop	Displays processes and resources information
+
+top ==> top command is used to show the Linux processes. It provides a dynamic real-time view of the running system. Usually, this command shows the summary information of the system and the list of processes or threads which are currently managed by the Linux Kernel.
+
 unzip	Extracts compressed ZIP files
 apt, yum, pacman	Package managers
 echo	Displays lines of text
@@ -26,14 +29,15 @@ vim	Efficient text editing
 history	Shows a list of previous commands
 passwd	Changes user password
 which	Returns the full binary path of a program
+whereis Return the all path of a program
 shred	Overwrites a file to hide its contents
 less	Inspects files interactively
 tail	Displays last lines of a file
 head	Displays first lines of a file
 grep	Prints lines that match patterns
 whoami	Outputs username
-whatis	Shows single-line descriptions
-wc	Word count files
+whatis httpd	Shows single-line descriptions
+wc test1	Word count files
 uname	Displays OS information
 neofetch	Displays OS and hardware information
 find	Searches for files that follow a pattern
@@ -41,7 +45,13 @@ find / -name fileName
 find -name *.sh
 find -iname *.SH ( find -iname *.Sh /  find -iname *.sH)
 find -name *.tar.gz 
+find *ss*
 wget	Retrieves files from the internet
+
+** To record the terminal into test1 file
+# script test1
+# exit ==> To exit from script command
+ 
 
 
 grep
@@ -49,3 +59,37 @@ grep
 curl is a command-line tool to transfer data to or from a server, using any of the supported protocols (HTTP, FTP, IMAP, POP3, SCP, SFTP, SMTP, TFTP, TELNET, LDAP, or FILE). curl is powered by Libcurl. This tool is preferred for automation since it is designed to work without user interaction. curl can transfer multiple files at once. 
 
 # curl http://3.0.99.36:8081/jenkins/job/Pro-2/build?token=mypro2
+
+
+** ps command in Linux ==>
+As we all know Linux is a multitasking and multi-user systems. So, it allows multiple processes to operate simultaneously without interfering with each other. Process is one of the important fundamental concept of the Linux OS. A process is an executing instance of a program and carry out different tasks within the operating system. 
+
+Linux provides us a utility called ps for viewing information related with the processes on a system which stands as abbreviation for “Process Status”. ps command is used to list the currently running processes and their PIDs along with some other information depends on different options. It reads the process information from the virtual files in /proc file-system. /proc contains virtual files, this is the reason it’s referred as a virtual file system. 
+
+** top ==> top command is used to show the Linux processes. It provides a dynamic real-time view of the running system. Usually, this command shows the summary information of the system and the list of processes or threads which are currently managed by the Linux Kernel.
+
+
+** Top vs Ps Command ==>
+ps - (Process Status) - It reports a snapshot of current processes.
+top (Table Of Processes) -It is a task manager program displays information about CPU and memory utilization.It provides a dynamic real-time view of the running system.
+
+** How to kill the process in CentOS 7
+# ps ==> Reports shell processes status
+# top
+# ps -elf ==> To display the running process in the terminal
+# ps -elf |grep test1 ==> It finds the particular process which is running on the background .
+# kill <process_id> ==> It is used to kill the process
+Ex-
+	# vim test1
+	# ps -elf
+	# ps -elf |grep test*
+
+	0 S centos    2874  2758  0  80   0 - 37328 poll_s 04:05 pts/0    00:00:00 vim test1
+	0 R centos    3016  2878  0  80   0 - 28203 -      04:10 pts/2    00:00:00 grep --color=auto test1
+
+		
+	# kill 2874
+	Vim: Caught deadly signal TERM
+	Vim: Finished.
+
+	Terminated

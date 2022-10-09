@@ -16,6 +16,7 @@ nano Test6.txt
 	Press Enter to exit from nano
 
 mkdir dir1 -- To Make Directory/Folder
+mkdir -p ParentDirectory/ChildDir1/SubChildDir2  ==> Here -p is used for Parent Directory. Whenenver we create we create multiple nested directory, that time we use -p with mkdir command ..
 cd dir2 -- To Change Directory
 ls -- List Directory/Files
 cd .. -- To go to the parent directory
@@ -151,7 +152,7 @@ Options:
 
 
 ** How to Delete the User
-# userdel <UserName>
+# userdel -r <UserName>
 
 ** How to Delete the Group
 # groupdel <GroupName>
@@ -208,16 +209,72 @@ wget "<url of software>"
 # >/var/log/messages
 # yum clean chached
 
+------------------------------------------------------------------
+** Extract the folder**********
+
+** Unzip 7z file in linux
+# yum install p7zip
+# 7za e 7LEMP.7z 
+
+** Unzip ZIP File
+# unzip newdir.zip
+
+** To Extract Tar file**
+tar -xvf dir1.tar
 
 
+-----------------------------------------------------------------
+** How to set the Date and Time in CentOS 7
+# date
+Syntax - 
+# date mmddhhmmyy.ss
+	mm - Months
+	dd - Days
+	hh - Hours
+	mm - Minutes
+	yy - Year 
+	ss - Second
 
-
-
+Ex- 
+# date 1007162422.55
  
 
 
 
- 
+
+** ** ps command in Linux ==>
+As we all know Linux is a multitasking and multi-user systems. So, it allows multiple processes to operate simultaneously without interfering with each other. Process is one of the important fundamental concept of the Linux OS. A process is an executing instance of a program and carry out different tasks within the operating system. 
+
+Linux provides us a utility called ps for viewing information related with the processes on a system which stands as abbreviation for “Process Status”. ps command is used to list the currently running processes and their PIDs along with some other information depends on different options. It reads the process information from the virtual files in /proc file-system. /proc contains virtual files, this is the reason it’s referred as a virtual file system. 
+
+** top ==> top command is used to show the Linux processes. It provides a dynamic real-time view of the running system. Usually, this command shows the summary information of the system and the list of processes or threads which are currently managed by the Linux Kernel.
+
+
+** Top vs Ps Command ==>
+ps - (Process Status) - It reports a snapshot of current processes.
+top (Table Of Processes) -It is a task manager program displays information about CPU and memory utilization.It provides a dynamic real-time view of the running system.
+
+** How to kill the process in CentOS 7
+# ps ==> Reports shell processes status
+# top
+# ps -elf ==> To display the running process in the terminal
+# ps -elf |grep test1 ==> It finds the particular process which is running on the background .
+# kill <process_id> ==> It is used to kill the process
+Ex-
+	# vim test1
+	# ps -elf
+	# ps -elf |grep test*
+
+	0 S centos    2874  2758  0  80   0 - 37328 poll_s 04:05 pts/0    00:00:00 vim test1
+	0 R centos    3016  2878  0  80   0 - 28203 -      04:10 pts/2    00:00:00 grep --color=auto test1
+
+		
+	# kill 2874
+	Vim: Caught deadly signal TERM
+	Vim: Finished.
+
+	Terminated
+
 
 
 

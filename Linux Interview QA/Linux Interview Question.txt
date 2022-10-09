@@ -252,6 +252,7 @@ To share a directory using NFS, first edit the configuration file and ‘/etc/ex
 GNOME stands for GNU Object Model Environment. Properly pronounced “guh-nome,” it is one of the most popular free and open-source desktop environments used in some of the major Linux operating systems like Ubuntu, Pop!_OS,CentOS, Fedora, etc.
 
 In simple terms, a Linux desktop environment is everything you see on your screen. From lock screen to home screen, as well as individual elements like app launchers and app icons, when tied together, form a desktop environment.
+Linux typically provides two GUIs, KDE and Gnome.
 
 ** Linux OS = Linux Karnel + GNU
 ** GNU => GNU was a free sofware system movment in 1983. It was a project which was provide free software.
@@ -264,4 +265,198 @@ In simple terms, a Linux desktop environment is everything you see on your scree
 3. Debian
 4. Other - Ubuntu, CentOS(Community Enterprise Operating System), Amazon Linux, Kali Linux
 
+
+** Differentiate between BASH and DOS?
+Difference between Bash and Dos
+Bash - 
+Commands are case sensitive
+Backward slash(/) represents directories separator
+Forward slash ‘’ represents escape character
+Does not follow naming conventions in files 
+
+Dos-
+commands are not case sensitive
+‘/’ represents command arguments
+‘’ represents directories separator
+Follow naming convention in files
+
+** What is meant by internal commands and external commands?
+Internal Commands: Commands directly run by the shell are known as internal commands and there is no separate process to run the commands. 
+External Commands: Commands which are run by the kernel are known as external commands and every single command has its own unique process id.
+
+** Explain the work of the Ctrl+Alt+Del key combination on the Linux operating system?
+In Linux, the Ctrl+Alt+Del key is used to restart the computer, and it does not display any confirmation message before rebooting the system. 
+
+** What is the netstat command in Linux?
+netstat command in Linux shows the network status. This netstat command shows network ports in use and their incoming connections.
+
+
+** What is the df command in Linux?
+Users can use the df command to troubleshoot disk space issues. Here df stands for display free disk space.
+
+df Command Example:
+
+df -h
+
+** What is a du command in Linux?
+du command in Linux is used to retrieve more detailed information about which files use the disk space in a directory.
+
+du Command Example:
+
+$ du -sh /var/log/*
+1.8M  /var/log/anaconda
+384K  /var/log/audit
+4.0K  /var/log/boot.log
+0 /var/log/chrony
+4.0K  /var/log/cron
+4.0K  /var/log/maillog
+64K /var/log/messages
+
+** What is the iptables command in Linux?
+iptables command blocks or allows traffic on a Linux host, similar to a network firewall. This iptables command may prevent certain applications from receiving or transmitting requests.
+
+** What is the difference between Linux and Windows?
+=>
+Linux ==>
+Linux is available for FREE
+It is an Open-Source operating system
+Linux customization is possible
+It provides high-level security
+Primary partitioning and logical partitioning available to boot
+BackSlash separates directories
+File names are case particular
+
+Windows ==>
+It is paid software
+It is not an open-source OS
+No customizations are available
+Can't defend virus and malware attacks unless until it is paid
+Booting available while primary partitioning only
+The forward slash separates directories
+Irrespective of the case while naming files
+
+** What is df -h command?
+This command shows free space on mounted file systems.
+
+** What is df -i command?
+df -I command shows free inodes on mounted filesystems.
+
+** What is fdisk -l command used for?
+fdisk -I command show disks partitions sizes and types (run as root)
+
+**  How do you kill the program using one port in Linux?
+Use this command to kills the program using one port: sudo fuser -k 8000/tcp
+
+
+** Key differences between CentOS and Red Hat Enterprise Linux OS
+=> Here, you will learn about the various key differences between CentOS and Red Hat OS. Some main differences between CentOS and Red Hat OS are as follows:
+
+CentOS is a manageable, predictable, stable, and reproducible platform derived from RHEL sources. In contrast, RHEL is a commercial Linux distribution.
+CentOS is developed for the amd64 platform. In contrast, Red Hat OS is developed for the ARM 64, IBM Power, IBM Z, x86-64, Power ISA, and IBM LinuxOne platforms.
+The open-source community maintains CentOS. In contrast, Red Hat OS is maintained by the Red Hat organization.
+CentOS was firstly launched in 2004. In contrast, Red Hat was firstly launched in 2000.
+CentOS applications include mainframes, desktop PCs, workstations, and servers. In contrast, Red Hat applications include workstations, servers, mainframes, and supercomputers.
+Yum, Package Kit, and rpm are CentOS package managers. In contrast, Red Hat's package managers are Yum, yumex, PackageKit, and RPM.
+CentOS is similar to Red Hat; it is free and does not have official support. On the other hand, Red Hat offers subscription-based services as well as official support.
+CentOS is preferred for personal use. In contrast, Red Hat is preferred for organizational use.
+
+** DNF (Dandified YUM) VS YUM (Yellowdog Updater, Modified)
+=> DNF uses ‘libsolv’ for dependency resolution, developed and maintained by SUSE. YUM uses the public API for dependency resolution
+
+=> API is fully documented. API is not fully documented
+=> It is written in C, C++, Python. It is written only in Python
+=> DNF is currently used in Fedora, Red Hat Enterprise Linux 8 (RHEL), CentOS 8, OEL 8 and Mageia 6/7.  YUM is currently used in Red Hat Enterprise Linux 6/7 (RHEL), CentOS 6/7, OEL 6/7.
+=> DNf supports various extensions. Yum supports only Python-based extension
+=> The API is well documented so it’s easy to create new features. It is very difficult to create new features because the API is not properly documented.
+=> The DNF uses less memory when synchronizing the metadata of the repositories.  The YUM uses excessive memory when synchronizing the metadata of the repositories.
+=> If the enabled repository does not respond, dnf will skip it and continue the transaction with the available repositories. If a repository is not available, YUM will stop immediately.
+=> dnf update and dnf upgrade are equals. It’s different in yum
+=> Kernel packages are not protected by dnf. Unlike Yum, you can delete all kernel packages, including one that runs. 	Yum will not allow you to remove the running kernel
+
+************************************************
+
+** ** ps command in Linux ==>
+As we all know Linux is a multitasking and multi-user systems. So, it allows multiple processes to operate simultaneously without interfering with each other. Process is one of the important fundamental concept of the Linux OS. A process is an executing instance of a program and carry out different tasks within the operating system. 
+
+Linux provides us a utility called ps for viewing information related with the processes on a system which stands as abbreviation for “Process Status”. ps command is used to list the currently running processes and their PIDs along with some other information depends on different options. It reads the process information from the virtual files in /proc file-system. /proc contains virtual files, this is the reason it’s referred as a virtual file system. 
+
+** top ==> top command is used to show the Linux processes. It provides a dynamic real-time view of the running system. Usually, this command shows the summary information of the system and the list of processes or threads which are currently managed by the Linux Kernel.
+
+
+** Top vs Ps Command ==>
+ps - (Process Status) - It reports a snapshot of current processes.
+top (Table Of Processes) -It is a task manager program displays information about CPU and memory utilization.It provides a dynamic real-time view of the running system.
+
+** How to kill the process in CentOS 7
+# ps ==> Reports shell processes status
+# top
+# ps -elf ==> To display the running process in the terminal
+# ps -elf |grep test1 ==> It finds the particular process which is running on the background .
+# kill <process_id> ==> It is used to kill the process
+Ex-
+	# vim test1
+	# ps -elf
+	# ps -elf |grep test*
+
+	0 S centos    2874  2758  0  80   0 - 37328 poll_s 04:05 pts/0    00:00:00 vim test1
+	0 R centos    3016  2878  0  80   0 - 28203 -      04:10 pts/2    00:00:00 grep --color=auto test1
+
+		
+	# kill 2874
+	Vim: Caught deadly signal TERM
+	Vim: Finished.
+
+	Terminated
+
+
+** What is Package Manager ?
+=> Package manager or package management system is a collection of software tools that automate the process of installing, upgrading, configuring, and removing software in the Linux system.
+
+Each Linux distribution uses different package management tools, while the Red Hat-based distros use RPM, YUM and DNF.
+
+** What’s RPM?
+RPM refers to RPM Package Manager (formerly known as Red Hat Package Manager) is a powerful, command-line package management tool developed for the Red Hat operating system.
+It is now used as a core component in many Linux distributions such as Centos, Fedora, Oracle Linux, openSUSE and Mageia.
+RPM Package Manager allows you to install, upgrade, delete, query and verify packages on RPM-based Linux systems.
+RPM files comes with the .rpm extension. 
+There are many front-end tools available on Linux to install the RPM package that make the installation process efficient, compared to the RPM tool, especially for handling dependencies.
+ A Graphical frontend tool for Linux Package Manager -- YUM, DNF, apt-get, apt, urpmi, pacman, yaourt, packer & zypper.
+
+** What’s YUM?
+YUM stands for Yellowdog Updater Modified.
+Yum is a free and open-source command-line package-management application/tool for Linux operating systems that uses the RPM Package Manager.
+
+Yum is a front-end tool for rpm that automatically solves dependencies for packages.
+
+It installs RPM software packages from distribution official repositories and other third-party repositories.
+
+Yum allows you to install, update, search and remove packages from your system.
+
+If you want to keep your system up-to-date, you can enable automatic updates via yum-cron.
+
+Also, if needed, it allows you to exclude a package or packages from the yum update.
+
+Yum is installed by default and you do not need to install it seperately.
+
+
+** What is the different between Unix and Linux ?
+=> Linux ==>
+   -----------
+- Linux is open source and is developed by Linux community of developers.
+- Linux is free to use.
+- Supportd File systems -- Ext2, Ext3, Ext4, Jfs, ReiserFS, Xfs, Btrfs, FAT, FAT32, NTFS.
+- Linux uses KDE and Gnome. Other GUI supported are LXDE, Xfce, Unity, Mate.
+- Linux is used in wide varieties from desktop, servers, smartphones to mainframes.
+- Bash (Bourne Again SHell) is default shell for Linux.
+- Ex- Ubuntu,Fedora ,CentOS, RedHat, Debian GNU, Arch Linux, etc.
+
+Unix ==>
+---------
+- Unix was developed by AT&T Bell labs and is not open source.
+- Unix is licensed OS.
+- Supportd File systems-- fs, gpfs, hfs, hfs+, ufs, xfs, zfs.
+- Unix was initially a command based OS. Most of the unix distributions now have Gnome.
+- Unix is mostly used on servers, workstations or PCs.
+- Bourne Shell is default shell for Unix.
+- Ex- SunOS, Solaris, SCO UNIX, AIX, HP/UX, ULTRIX etc.
 
